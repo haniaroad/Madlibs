@@ -17,14 +17,18 @@
 
     <div class="container">
         <input type="text" id="verb" placeholder="Type a verb...">
+        <input type="text" id="verb2" placeholder="Type another verb...">
+        <input type="text" id="verb3" placeholder="Type a third verb...">
         <input type="text" id="noun" placeholder="Type a noun...">
+        <input type="text" id="noun2" placeholder="Type a second noun...">
+        <input type="text" id="adjective" placeholder="Type an adjective...">
+
         <input type="submit" id="submit" placeholder="Submit" onclick="madlib()">
     </div>
 
     <div class="display">
     
     <p id="madlib">
-        This is a really big { noun1 }. Normally, I wouldn't even think to { verb1 } that because of the  { noun2 }. That said, I should probably { verb2 } my { adjective1 } thing so that it'll all { verb3 }.
     </p>
     
     </div>
@@ -42,10 +46,16 @@
     function madlib () {
 
        var verb = document.getElementById("verb").value;
-       var noun = document.getElementById("noun").value;
+       var noun = document.getElementById("verb2").value;
+       var noun2 = document.getElementById("verb3").value;
+       var verb2 = document.getElementById("noun").value;
+       var adjective = document.getElementById("noun2").value;
+       var verb3 = document.getElementById("adjective").value;
+
        const madlib = document.getElementById("madlib");
       
-        madlib.innerHTML = "This is your " + verb + " and this is your " + noun;
+        madlib.innerHTML = "This is a really big " + noun + ". Normally, I wouldn't even think to " + verb + " that because of the " + noun2 + ". That said, I should probably " + verb2 + " my " + adjective + " thing so that it'll all " + verb3 + ".";
+
       
     }
 
