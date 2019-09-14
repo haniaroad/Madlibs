@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MadlibApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" type="text/css" href="pages.css">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <center>
+
+    <div class="container">
+        <input type="text" id="verb" placeholder="Type a verb...">
+        <input type="text" id="noun" placeholder="Type a noun...">
+        <input type="submit" id="submit" placeholder="Submit" onclick="madlib()">
+    </div>
+
+    <div class="display">
+    <p id="madlib"></p>
+    </div>
+
+    <center>
+
+
+    <%= yield %>
+
+    
+    <script>
+
+   
+
+    function madlib () {
+
+       var verb = document.getElementById("verb").value;
+       var noun = document.getElementById("noun").value;
+       const madlib = document.getElementById("madlib");
+      
+        madlib.innerHTML = "This is your " + verb + " and this is your " + noun;
+      
+    }
+
+    </script>
+    
+  </body>
+</html>
